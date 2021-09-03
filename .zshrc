@@ -117,10 +117,14 @@ zinit ice blockf
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
+
+
 #DISPLAY
 export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
-#export DISPLAY=':0.0'
-export XDG_SESSION_TYPE=x11
+# export DISPLAY=':0.0'
+# export XDG_SESSION_TYPE=x11
 
 export WIN_USER_DIR=/mnt/c/Users/urein
 alias cdWinUserDir='cd $WIN_USER_DIR'
@@ -129,32 +133,41 @@ showAllColor(){
 	for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 }
 
+# acConda(){
+#   __conda_setup="$('/home/xiz/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+#   if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+#   else
+#     if [ -f "/home/xiz/anaconda3/etc/profile.d/conda.sh" ]; then
+#       . "/home/xiz/anaconda3/etc/profile.d/conda.sh"
+#     else
+#       export PATH="/home/xiz/anaconda3/bin:$PATH"
+#     fi
+#   fi
+# unset __conda_setup
+# }
 
-run_qt_arm(){
-  source /home/ins/ti-processor-sdk-linux-am437x-evm-03.03.00.04/linux-devkit/environment-setup
-  cd Qt5.14.2/Tools/QtCreator/bin/
-  ./qtcreator
-}
+# acConda
 
-
-acConda(){
-  __conda_setup="$('/home/ins/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-  if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-  else
-    if [ -f "/home/ins/anaconda3/etc/profile.d/conda.sh" ]; then
-      . "/home/ins/anaconda3/etc/profile.d/conda.sh"
-    else
-      export PATH="/home/ins/anaconda3/bin:$PATH"
-    fi
-  fi
-unset __conda_setup
-}
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-
-acConda
-
-export PATH="/home/ins/.local/bin:$PATH"
+export PATH="/home/xiz/.local/bin:$PATH"
 
 alias github=". /usr/bin/github"
+
+gitcl() {
+  # 不含有 'com/' 或者 'com:'
+  # 例如: gc innns/junkcar
+  if [ ${1%'.com/'*} = $1 -o ${1%'.com:'*} = $1 ]; then
+    # 不含有 '/' 则有问题啊
+    if [ ${1%'/'*} = $1 ]; then
+      echo "WRONG!!!"
+      return 1
+    else
+      git clone "git@github.com:"$1
+      return 0
+    fi
+  fi
+
+  if [ ${1:0:4} = "git@" -o ${1:0:6} = "https:" ]; then
+    git clone $1
+  fi
+}

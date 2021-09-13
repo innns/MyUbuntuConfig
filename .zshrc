@@ -121,8 +121,8 @@ zinit light zsh-users/zsh-completions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
 
 
-#DISPLAY
-export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
+# DISPLAY
+# export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0
 # export DISPLAY=':0.0'
 # export XDG_SESSION_TYPE=x11
 
@@ -156,6 +156,11 @@ alias github=". /usr/bin/github"
 gitcl() {
   # 不含有 'com/' 或者 'com:'
   # 例如: gc innns/junkcar
+  if [ ${1:0:4} = "git@" -o ${1:0:6} = "https:" ]; then
+    git clone $1
+    return 0
+  fi
+
   if [ ${1%'.com/'*} = $1 -o ${1%'.com:'*} = $1 ]; then
     # 不含有 '/' 则有问题啊
     if [ ${1%'/'*} = $1 ]; then
@@ -166,8 +171,16 @@ gitcl() {
       return 0
     fi
   fi
+}
 
-  if [ ${1:0:4} = "git@" -o ${1:0:6} = "https:" ]; then
-    git clone $1
+ac() {
+  if [ -f "/home/xiz/py_env/$1/bin/activate" ]; then
+    . ~/py_env/$1/bin/activate
+    echo "activate ~/py_env/$1/bin/activate"
+  else
+    echo "available env: "
+    ls ~/py_env
   fi
 }
+
+alias deac="deactivate"

@@ -76,11 +76,8 @@ source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
 
-
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
@@ -116,10 +113,7 @@ zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit ice blockf
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
-
-
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=8"
-
 
 # DISPLAY
 # export DISPLAY=$(grep -m 1 nameserver /etc/resolv.conf | awk '{print $2}'):0.0

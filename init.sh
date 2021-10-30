@@ -9,8 +9,8 @@ wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py
 
 sudo python3 oh-my-tuna.py --global
 
-sudo apt install build-essential pkg-config cmake git screen net-tools wget curl gcc g++
-sudo apt install python3-pip 
+sudo apt install build-essential pkg-config cmake git screen net-tools wget curl gcc g++ -y
+sudo apt install python3-pip -y
 
 # set python3 default python
 

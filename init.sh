@@ -35,6 +35,6 @@ sudo fc-cache -fv
 
 # install
 sudo apt install zsh -y
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zinit/master/doc/install.sh)"
+sh -c "$(curl -fsSL https://git.io/zinit-install)"
 echo "To change default shell to zsh, use: "
 echo "chsh -s $(which zsh)"

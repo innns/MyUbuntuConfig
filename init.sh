@@ -14,6 +14,11 @@ sudo apt update
 sudo apt install build-essential pkg-config cmake git screen net-tools wget curl gcc g++ -y
 sudo apt install python3-pip -y
 
+# 使mkfontscale和mkfontdir命令正常运行
+sudo apt-get install ttf-mscorefonts-installer
+# 使fc-cache命令正常运行
+sudo apt-get install fontconfig
+
 # set python3 default python
 
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150

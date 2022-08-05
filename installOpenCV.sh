@@ -1,17 +1,22 @@
 
+echo "WANGNING DONOT USE ROOT USER"
+USERNAME="xiz"
+echo "USERNAME = ${USERNAME}"
+
 # OpenCV
 sudo apt install libgtk2.0-dev libavcodec-dev libavformat-dev libjpeg-dev libswscale-dev libtiff5-dev libgtk2.0-dev pkg-config libv4l-dev libhdf5-dev libhdf5-103 libjpeg8-dev 
 libatlas-base-dev gfortran cheese fswebcam v4l-utils libgtk-3-dev -y
-sudo apt install python3-numpy python3-dev
+sudo apt install python3-numpy python3-dev -y
 
-mkdir ~/Documents
-cd ~/Documents
+cd /home/${USERNAME}
+mkdir Documents
+cd Documents
 
 git clone https://gitee.com/mirrors/opencv.git
 git clone https://gitee.com/mirrors/opencv_contrib.git
 
 #>>>>> 编译OpenCV
-cd ~/Documents/opencv
+cd opencv
 mkdir build
 cd build
 

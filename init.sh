@@ -1,6 +1,6 @@
 #!/bin/bash
 
-USERNAME='xiz'
+USERNAME=$(whoami)
 
 mkdir ~/tmp
 cd ~/tmp

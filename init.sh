@@ -2,17 +2,16 @@
 
 USERNAME=$(whoami)
 
-mkdir ~/tmp
-cd ~/tmp
+# mkdir ~/tmp
+# cd ~/tmp
 
-wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py
+# wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py
 
-sudo python3 oh-my-tuna.py --global
+# sudo python3 oh-my-tuna.py --global
 
 sudo apt update
 
-sudo apt install build-essential pkg-config cmake git screen net-tools wget curl gcc g++ -y
-sudo apt install python3-pip -y
+sudo apt install build-essential pkg-config cmake make git screen net-tools curl gcc g++ git wget curl net-tools vim python3 python3-pip openssh-server openssh-client tldr -y
 
 # 使mkfontscale和mkfontdir命令正常运行
 sudo apt-get install ttf-mscorefonts-installer
@@ -21,20 +20,20 @@ sudo apt-get install fontconfig
 
 # set python3 default python
 
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+# sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
 
 #Download fonts
 mkdir -p ~/Downloads/fonts_MesloLGS
 cd ~/Downloads/fonts_MesloLGS
-#wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-#wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
-#wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
-#wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
-wget https://gitee.com/keyboardkiller/MesloLGS_NF/raw/master/MesloLGS%20NF%20Regular.ttf
-wget https://gitee.com/keyboardkiller/MesloLGS_NF/raw/master/MesloLGS%20NF%20Bold.ttf
-wget https://gitee.com/keyboardkiller/MesloLGS_NF/raw/master/MesloLGS%20NF%20Italic.ttf
-wget https://gitee.com/keyboardkiller/MesloLGS_NF/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+# wget https://gitee.com/keyboardkiller/MesloLGS_NF/raw/master/MesloLGS%20NF%20Regular.ttf
+# wget https://gitee.com/keyboardkiller/MesloLGS_NF/raw/master/MesloLGS%20NF%20Bold.ttf
+# wget https://gitee.com/keyboardkiller/MesloLGS_NF/raw/master/MesloLGS%20NF%20Italic.ttf
+# wget https://gitee.com/keyboardkiller/MesloLGS_NF/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
 
 sudo chmod 777 *
 cd ..

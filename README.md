@@ -60,9 +60,30 @@ Test with `nvcc -V`:
 ## Install Conda
 See [Conda](https://docs.conda.io/en/latest/)
 
-## (OPTIONAL) Install 1Panel
+## (OPTIONAL) Install [1Panel](https://1panel.cn/)
+
+```
+cd ~/Documents
+bash -c "$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)"
+```
 
 ## Install Docker and Nvidia-docker
 
-
 [Nvidia-docker](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+
+## Other Utils
+
+### [vscode](https://code.visualstudio.com/download)
+
+### Ibus-rime
+
+```bash
+sudo apt install ibus-rime
+cd ~/Documents && curl -fsSL https://raw.githubusercontent.com/rime/plum/master/rime-install | bash
+cd plum && bash rime-install iDvel/rime-ice:others/recipes/full
+ibus restart
+```
+
+### [Github Desktop](https://github.com/shiftkey/desktop/releases)
+
+### [Edge](https://www.microsoft.com/en-us/edge/download)
